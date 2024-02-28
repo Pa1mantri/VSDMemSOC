@@ -1,0 +1,8 @@
+set_units -time ns
+create_clock [get_ports -of_objects [get_nets CLK]] -name clk -period 10
+set_propagated_clock [all_clocks]
+set_input_delay -clock clk 1 [all_inputs]
+set_output_delay -clock clk 1 [all_outputs]
+#set_input_transition -rise 1 [all_inputs]
+#set_timing_derate -early 0.95
+#set_timing_derate -late 0.95
