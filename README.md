@@ -89,6 +89,11 @@ After running synthesis, Pre-layout STA report and chip Area information is avai
 
 **Image of synthesis STA, AREA**
 
+**yosys report**
+
+<img width="926" alt="Screenshot 2024-03-01 144324" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/757a6e74-6b2b-4add-a0b7-69b2bfb86fb6">
+
+
 Next step is the floorplan
 
 .def file is created. Can be viewed using magic tool using the command ```magic -d XR -T /home/pa1mantri/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read vsdmemsoc.def &``` tech and lef information is also provided to the magic tool.
@@ -122,8 +127,16 @@ GDS Stands for Graphic Design Standard. This is the file that is sent to the fou
 
 <img width="716" alt="Screenshot 2024-03-01 142512" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/01ad1c75-ada3-4f15-a058-492b15e471c6">
 
+**Flow completed with zero violations**
 
-**Different Views of final Layout from OpenRoad**
+<img width="916" alt="Screenshot 2024-03-01 123857" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/b7736a32-8b79-4d63-8b01-313e5b3957b8">
+
+**Total Summary file generated at the end of the flow with all the details**
+
+<img width="856" alt="Screenshot 2024-03-01 144832" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/29c9e1f8-8c78-4086-b99f-31bfdcd4f4d7">
+
+<img width="923" alt="Screenshot 2024-03-01 144509" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/e51d3c8a-94da-4746-9a18-81a39a8cc27e">
+
 
 
 
