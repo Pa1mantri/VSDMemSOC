@@ -84,9 +84,15 @@ The ouput gives area estimation for different stratagies.
 
 **Image of synthesis stratagies table**
 
+<img width="542" alt="Screenshot 2024-03-01 152814" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/37b6e651-de37-43a8-809b-ceef16068177">
+
 After running synthesis, Pre-layout STA report and chip Area information is available.
 
-**Image of synthesis STA, AREA**
+**Image of synthesis STA, Power**
+
+<img width="885" alt="Screenshot 2024-03-01 153026" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/ca025198-20e0-4341-8060-b6cb2d20984e">
+
+<img width="897" alt="Screenshot 2024-03-01 153002" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/8a693790-92ce-4ddb-bfb4-ffc606972fc1">
 
 **yosys report**
 
