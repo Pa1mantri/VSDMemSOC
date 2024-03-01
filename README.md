@@ -32,27 +32,26 @@ add_lefs -src $lefs
   - Generating gate-level netlist (yosys). - Performing cell mapping (abc).
   - Performing pre-layout STA (OpenSTA).
   - Usefull info for design stage: Flip-flop ratio, chip area, timing performance
-  
+   
 - Floorplanning
   - Command run_floorplan
   - Defining the core area for the macro as well as the cell sites and the tracks (init_fp).
   - Placing the macro input and output ports (ioplacer).
   - Generating the power distribution network (pdn).
     - /results/ *.def , contains the design Core Area.
-
+  
 - Placement
   - run_placement - Performing global placement (RePLace).
   - Perfroming detailed placement to legalize the globally placed components (OpenDP).
 
 - Clock Tree Synthesis (CTS)
   - Synthesizing the clock tree (TritonCTS).
-  
+
 - Routing
  - Performing global routing to generate a guide file for the detailed router (FastRoute).
  - Performing detailed routing (TritonRoute)
   
 - GDSII Generation
   - Streaming out the final GDSII layout file from the routed def (Magic).
-
 
 
