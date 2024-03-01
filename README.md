@@ -53,6 +53,31 @@ add_lefs -src $lefs
   
 - GDSII Generation
   - Streaming out the final GDSII layout file from the routed def (Magic).
+  
+# List of commands used in the openlane flow
+
+```
+cd OpenLane/ 
+make mount 
+{ If Error occurs use the below commands in OpenLane directory:
+sudo chown $USER /var/run/docker.sock 
+PYTHON_BIN=python3 make mount
+}
+
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a
+run_synthesis
+run_floorplan
+run_placement
+run_cts
+run_routing
+run_magic
+run_magic_spice_export
+run_magic_drc
+run_netgen
+run_magic_antenna_check
+```
 
 ### Synthesis Exploration
 At the begining a synthesis strategy exploration can be done using OpenLane command ```./flow.tcl -design vsdmemsoc synth_explore```
@@ -76,10 +101,21 @@ Next is CTS
 
 Up-until now, an ideal clock is considered. Now real clock gets into the picture.
 
+**clock TREE from Klayout**
 **Power Report STA report**
 **View after Placement**
 
 Next step is Routing
 
 **Routing Congestion Map from Klayout**
+
+## GDSII
+
+GDS Stands for Graphic Design Standard. This is the file that is sent to the foundry and is called as "tape-out".
+
+**GDS file from klayout**
+
+**Different Views of final Layout from klayout**
+
+
 
