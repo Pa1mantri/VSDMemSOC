@@ -101,21 +101,30 @@ Next is CTS
 
 Up-until now, an ideal clock is considered. Now real clock gets into the picture.
 
-**clock TREE from Klayout**
+**clock TREE for the design**
+
+<img width="727" alt="Screenshot 2024-03-01 142542" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/ab3cbb77-4173-4920-bc97-4908c177aad9">
+
 **Power Report STA report**
 **View after Placement**
 
 Next step is Routing
 
-**Routing Congestion Map from Klayout**
+**Routing Congestion view from OpenRoad**
+
+<img width="717" alt="Screenshot 2024-03-01 142643" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/d7400188-724e-4aca-97f0-e5f3379c7171">
 
 ## GDSII
 
 GDS Stands for Graphic Design Standard. This is the file that is sent to the foundry and is called as "tape-out".
 
-**GDS file from klayout**
+**GDS file from OpenRoad**
 
-**Different Views of final Layout from klayout**
+<img width="716" alt="Screenshot 2024-03-01 142512" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/01ad1c75-ada3-4f15-a058-492b15e471c6">
+
+
+**Different Views of final Layout from OpenRoad**
+
 
 
 
