@@ -4,7 +4,7 @@ VSDMemSOC Implementation flow:: RTL2GDSII
 VSDMemSoC is an SoC that includes a RISC-V based processor called RVMYTH and an external 1kB SRAM instruction memory (Imem), separating the instruction memory from the processor core.
 ### Introduction to VSDMemSoC
 The purpose of designing such an SOC to is to demonstrate the concept of separating the main core and memories of processor. This would help to make the RISC-V more modular and portable. Here, the instruction memory is separated.
-*1.png*
+
 ### RVMYTH
 RVMYTH core is a simple RISCV-based CPU, introduced in a workshop by RedwoodEDA and VSD.Core is developed using TL-Verilog for faster development.
 ### SRAM
@@ -25,7 +25,6 @@ Since we are using a SRAM Macro from the PDK, we need to add LEF files of that S
 set lefs [glob $::env(DESIGN_DIR)/src/macros/*.lef]
 add_lefs -src $lefs
 ```
-*2.png*
 
 - Synthesis
   - Command run_synthesis
@@ -48,8 +47,8 @@ add_lefs -src $lefs
   - Synthesizing the clock tree (TritonCTS).
 
 - Routing
- - Performing global routing to generate a guide file for the detailed router (FastRoute).
- - Performing detailed routing (TritonRoute)
+  - Performing global routing to generate a guide file for the detailed router (FastRoute).
+  - Performing detailed routing (TritonRoute)
   
 - GDSII Generation
   - Streaming out the final GDSII layout file from the routed def (Magic).
@@ -94,30 +93,44 @@ After running synthesis, Pre-layout STA report and chip Area information is avai
 <img width="926" alt="Screenshot 2024-03-01 144324" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/757a6e74-6b2b-4add-a0b7-69b2bfb86fb6">
 
 
-Next step is the floorplan
+### Next step is the floorplan
 
 .def file is created. Can be viewed using magic tool using the command ```magic -d XR -T /home/pa1mantri/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read vsdmemsoc.def &``` tech and lef information is also provided to the magic tool.
 
-Next step is Placement
+### Placement
 
 .def file is created. Global and detailed placements happens during this step.
 
-Next is CTS
+.def file opened through magic tool using tech and lef files.
+
+<img width="719" alt="Screenshot 2024-03-01 151047" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/05d0e366-140d-4bb3-a011-a8619002652a">
+
+### CTS
 
 Up-until now, an ideal clock is considered. Now real clock gets into the picture.
 
-**clock TREE for the design**
+**Clock Tree for the entire design**
 
 <img width="727" alt="Screenshot 2024-03-01 142542" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/ab3cbb77-4173-4920-bc97-4908c177aad9">
 
-**Power Report STA report**
-**View after Placement**
+**Power Report and Clock skew report**
 
-Next step is Routing
+<img width="898" alt="Screenshot 2024-03-01 151350" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/3e6ec9e6-db7e-430d-b5ea-4908606f877a">
+
+<img width="899" alt="Screenshot 2024-03-01 151401" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/6084de85-81ba-4d98-9db0-e565fcf482bb">
+
+# Routing
 
 **Routing Congestion view from OpenRoad**
 
 <img width="717" alt="Screenshot 2024-03-01 142643" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/d7400188-724e-4aca-97f0-e5f3379c7171">
+
+**Power and Clock skew report**
+
+<img width="897" alt="Screenshot 2024-03-01 151745" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/33cf0a4e-e33c-4c2d-9990-ba4e0d413275">
+
+<img width="896" alt="Screenshot 2024-03-01 151756" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/d0bf5520-fb19-4040-930c-711f78126442">
+
 
 ## GDSII
 
@@ -133,9 +146,10 @@ GDS Stands for Graphic Design Standard. This is the file that is sent to the fou
 
 **Total Summary file generated at the end of the flow with all the details**
 
+<img width="923" alt="Screenshot 2024-03-01 144509" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/e51d3c8a-94da-4746-9a18-81a39a8cc27e">
+
 <img width="856" alt="Screenshot 2024-03-01 144832" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/29c9e1f8-8c78-4086-b99f-31bfdcd4f4d7">
 
-<img width="923" alt="Screenshot 2024-03-01 144509" src="https://github.com/Pa1mantri/VSDMemSOC/assets/114488271/e51d3c8a-94da-4746-9a18-81a39a8cc27e">
 
 
 
