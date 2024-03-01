@@ -54,4 +54,32 @@ add_lefs -src $lefs
 - GDSII Generation
   - Streaming out the final GDSII layout file from the routed def (Magic).
 
+### Synthesis Exploration
+At the begining a synthesis strategy exploration can be done using OpenLane command ```./flow.tcl -design vsdmemsoc synth_explore```
+The ouput gives area estimation for different stratagies.
+
+**Image of synthesis stratagies table**
+
+After running synthesis, Pre-layout STA report and chip Area information is available.
+
+**Image of synthesis STA, AREA**
+
+Next step is the floorplan
+
+.def file is created. Can be viewed using magic tool using the command ```magic -d XR -T /home/pa1mantri/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read vsdmemsoc.def &``` tech and lef information is also provided to the magic tool.
+
+Next step is Placement
+
+.def file is created. Global and detailed placements happens during this step.
+
+Next is CTS
+
+Up-until now, an ideal clock is considered. Now real clock gets into the picture.
+
+**Power Report STA report**
+**View after Placement**
+
+Next step is Routing
+
+**Routing Congestion Map from Klayout**
 
